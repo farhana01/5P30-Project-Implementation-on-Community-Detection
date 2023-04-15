@@ -1,3 +1,4 @@
+
 # Project on Implementing CP-GNN (Detecting Communities from Heterogeneous Graphs: A Context Path-based Graph Neural Network Model)
 
 ----
@@ -17,7 +18,6 @@ RAM: 16.0 GB
 GPU: No GPU 
 
 
-
 ## Requirements
 
 ```bash
@@ -32,11 +32,6 @@ scikit-learn==0.21.3
 
 ## Config
 
-```
-vi config.py
-```
-config.py example
-
 ```python
 import os
 
@@ -47,7 +42,7 @@ data_config = {
     'data_name': 'ACM.mat', # ACM.mat, DBLP.mat, IMDB.mat, AIFB.mat
     'primary_type': 'p', # p, a, m, Personen
     'task': ['CF', 'CL'],
-    'K_length': 4, # Context path length K
+    'K_length': 2, # Context path length K
     'resample': False, # Whether resample the training and testing dataset
     'random_seed': 123,
     'test_ratio': 0.8
@@ -80,7 +75,7 @@ train_config = {
     'lr': 0.05,
     'l2': 0,
     'factor': 0.2,
-    'total_epoch': 10000000,
+    'total_epoch': 10,
     'batch_size': 1024 * 20,
     'pos_num_for_each_hop': [20, 20, 20, 20, 20, 20, 20, 20, 20],
     'neg_num_for_each_hop': [3, 3, 3, 3, 3, 3, 3, 3, 3],
@@ -101,8 +96,34 @@ evaluate_config = {
 
 ## Train and Evaluate
 ``` bash
-python3 main.py
+python main.py
 ```
 
-## BibTex
+## Dataset Used:
+![Dataset](https://i.ibb.co/8DLFhYx/ds.png)
 
+
+## Implementation Process:
+
+CP-GNN Model:
+
+![CP-GNN Model](https://i.ibb.co/Kzvr3hk/Picture2.png)
+
+The workflow can be visualized in the following picture: 
+![Implementation Process](https://i.ibb.co/fn7XrbL/image.png)
+## Result:
+Result for ACM Dataset:
+
+![enter image description here](https://i.ibb.co/LzSCZwg/image.png)
+
+For the other three dataset with epoch =10 and k-length =2, I got the following result.
+![Result](https://i.ibb.co/G5TKqbt/dataset.png)
+### Case study on the effect of context path length (k-length):
+As K increases, the performance of CP-GNN improves. This supports the hypothesis that higher-order relationship information is crucial for community detection.
+
+![enter image description here](https://i.ibb.co/NSWZn22/image.png)
+
+## Code Demo
+Code demo can be found in the following link -
+
+[Demo ](https://brocku-my.sharepoint.com/:v:/r/personal/fy21cx_brocku_ca/Documents/Attachments/Code%20Demo_Farhana%20Yasmeen.mp4?csf=1&web=1&e=f0IkuC)
