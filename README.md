@@ -7,6 +7,11 @@ Reference -
 
 > Linhao Luo, Yixiang Fang, Xin Cao, Xiaofeng Zhang, and Wenjie Zhang. 2021. Detecting Communities from Heterogeneous Graphs: A Context Path-based Graph Neural Network Model. In Proceedings of the 30th ACM International Conference on Information & Knowledge Management (CIKM '21). Association for Computing Machinery, New York, NY, USA, 1170–1180. DOI:https://doi.org/10.1145/3459637.3482250
 
+## Overview
+
+This repository presents the implementation of the paper ”Detecting Communities from Heterogeneous Graphs: A Context Path-based Graph Neural Network Model”  which
+proposes an innovative approach for identifying communities in complex, heterogeneous graphs. The method utilizes a context path-based graph neural network (CP-GNN) model to effectively capture both structural and attribute information within the graph. By employing a flexible and powerful encoding scheme, the CP-GNN model is able to accurately identify community structures in the presence of diverse node and edge attributes. This repository contains the exceutable code of CP-GNN model. details the key. Furthermore, the report showcases the results of the implementation on various datasets, comparison with autors's result and case study on the effect of k-length in CP-GNN performance.
+
 ## Environments
 
 python == 3.6
